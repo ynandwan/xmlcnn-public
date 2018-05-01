@@ -125,19 +125,17 @@ if __name__ == '__main__':
 
     parser.add_argument('--train_path',
                         help='numericalized data in pickle', type=str,
-                        default='/home/cse/phd/csz178057/phd/nlp/project/xmlcnn/data/eurlex/train2.pkl')
-                        #default='/home/cse/phd/csz178057/phd/nlp/project/xmlcnn/data/amazon13k/train1.pkl')
+                        default='../data/eurlex/train2.pkl')
+    
     parser.add_argument('--val_path',
                         help='val numericalized data in pickle', type=str,
-                        default='/home/cse/phd/csz178057/phd/nlp/project/xmlcnn/data/eurlex/test2.pkl')
-                        #default='/home/cse/phd/csz178057/phd/nlp/project/xmlcnn/data/amazon13k/test1.pkl')
+                        default='../data/eurlex/test2.pkl')
     parser.add_argument('--vocab_path',
                         help='vocab in pickle', type=str,
-                        default='/home/cse/phd/csz178057/phd/nlp/project/xmlcnn/data/eurlex/vocab2.pkl')
-                        #default='/home/cse/phd/csz178057/phd/nlp/project/xmlcnn/data/amazon13k/vocab1.pkl')
+                        default='../data/eurlex/vocab2.pkl')
     parser.add_argument('--output_path',
                         help='output path', type=str,
-                        default='/home/cse/phd/csz178057/phd/nlp/project/xmlcnn/output/eurlex/best_models')
+                        default='../output/eurlex/best_models')
     parser.add_argument('--kernels',
                         help='number of filter sizes (could be a list of integer)', type=int,
                         default=[2, 4, 8], nargs='+')
@@ -180,13 +178,6 @@ if __name__ == '__main__':
     parser.add_argument('--backprop_batch_size',
                         help='batch size for backprop', type = int, default=256)
 
-    parser.add_argument('--label_path',
-                        help='label vocabulary', type=str,
-                        default='/home/cse/phd/csz178057/phd/nlp/project/xmlcnn/data/eurlex/eurlex_raw_text.p')
-
-    parser.add_argument('--error_analysis', help=' should apply lstm?',
-                        action='store_true')
-
     parser.add_argument('--has_titles', help=' has titles in addn to description',
                         action='store_true')
 
@@ -200,5 +191,5 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     #Pdb().set_trace()
-    #main(args)
+    main(args)
 
